@@ -86,10 +86,10 @@ if archivo_cargado:
     datos = cargar_datos(archivo_cargado)
 
     sucursales = ["Todas"] + datos['Sucursal'].unique().tolist()
-    sucursal_seleccionada = st.sidebar.selectbox("Elige una Sucursal", sucursales)
+    sucursal_seleccionada = st.sidebar.selectbox("Elegi una Sucursal", sucursales)
 
     datos_filtrados = procesar_sucursal(datos, sucursal_seleccionada)
-    st.header(f"Informe de Ventas - Sucursal: {sucursal_seleccionada}" if sucursal_seleccionada != "Todas" else "Informe Consolidado de Ventas")
+    st.header(f"Informe de Ventas - Sucursal: {sucursal_seleccionada}" if sucursal_seleccionada != "Todas" else "DATOS DE TODAS LAS SUCURSALES")
 
     productos = datos_filtrados['Producto'].drop_duplicates().values
 
