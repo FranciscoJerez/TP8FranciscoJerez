@@ -12,7 +12,7 @@ def crear_grafico_ventas(datos_ventas, nombre_producto):
 
     x = np.arange(len(datos_agrupados))
     y = datos_agrupados['Unidades_vendidas']
-    eje.plot(x, y, linewidth=2, label=nombre_producto)
+    eje.plot(x, y, linewidth=3, label=nombre_producto)
 
     indices = np.arange(len(datos_agrupados))
     valores = datos_agrupados['Unidades_vendidas']
@@ -21,9 +21,9 @@ def crear_grafico_ventas(datos_ventas, nombre_producto):
 
     eje.plot(indices, curva_tendencia(indices), linestyle='--', color='red', linewidth=1.5, label='Curva de Tendencia')
 
-    eje.set_title('Evolución de Ventas Mensual', fontsize=16)
-    eje.set_xlabel('Año-Mes', fontsize=12)
-    eje.set_ylabel('Unidades Vendidas', fontsize=12)
+    eje.set_title('Evolución de Ventas (mensual)', fontsize=16)
+    eje.set_xlabel('Año-Mes', fontsize=15)
+    eje.set_ylabel('Unidades Vendidas', fontsize=15)
     eje.set_ylim(0)
     eje.yaxis.set_major_locator(plt.MaxNLocator(integer=True))
     eje.grid(which='major', axis='y', linestyle='-', color='gray', alpha=0.5)
